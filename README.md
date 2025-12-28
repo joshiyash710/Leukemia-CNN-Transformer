@@ -1,96 +1,15 @@
 Leukemia Classification Using Hybrid CNN–Transformer
-Overview
 
-This repository contains an end-to-end deep learning pipeline for automated leukemia detection from microscopic blood smear images. The model leverages a hybrid CNN–Transformer architecture, combining local feature extraction from a CNN backbone (ResNet/EfficientNet) with global context modeling using a Transformer encoder.
+This project focuses on automated detection of leukemia from microscopic blood smear images using a hybrid deep learning architecture. The model combines the strengths of Convolutional Neural Networks (CNNs) for local feature extraction with Transformer encoders to capture global contextual relationships within the image.
 
-The system achieves high accuracy by training on the C-NMC leukemia dataset and using k-fold cross-validation with hyperparameter optimization via Optuna.
+By leveraging this hybrid approach, the system can accurately differentiate between leukemia (ALL) and normal hematopoietic cells. The model is trained and validated using k-fold cross-validation, ensuring robust performance and generalization. Additionally, hyperparameter optimization is performed using Optuna to identify the best configuration for backbone selection, learning rate, image size, and transformer parameters.
 
-Key Features
+The final solution provides:
 
-Hybrid architecture: CNN for feature extraction + Transformer for global context
+High-accuracy classification of leukemia vs. normal samples.
 
-Supports multiple backbones: ResNet18, ResNet50, EfficientNet-B0
+Ensemble predictions from multiple trained folds for more reliable results.
 
-Uses Focal Loss and Cross-Entropy Loss for robust training
+Confidence scores to identify low-confidence samples, enabling further review.
 
-K-fold cross-validation for reliable evaluation
-
-Optuna hyperparameter tuning for optimal performance
-
-Provides ensemble predictions across trained folds
-
-Generates confidence scores and identifies low-confidence samples
-
-Installation
-# Clone the repository
-git clone https://github.com/your-username/Leukemia-CNN-Transformer.git
-cd Leukemia-CNN-Transformer
-
-# Create and activate a virtual environment
-python -m venv leukemia_env
-source leukemia_env/bin/activate  # Linux/Mac
-leukemia_env\Scripts\activate     # Windows
-
-# Install dependencies
-pip install -r requirements.txt
-
-Dataset
-
-Training and validation data: D:\C-NMC_Leukemia\training_data and D:\C-NMC_Leukemia\validation_data
-
-Testing data: D:\C-NMC_Leukemia\testing_data
-
-The dataset contains two classes:
-
-ALL (Acute Lymphoblastic Leukemia)
-
-HEM (Normal Hematopoietic cells)
-
-Note: Update dataset paths in the code according to your environment.
-
-Usage
-1. Train Model with Optuna Hyperparameter Tuning
-python train_optuna.py
-
-2. Train Final Model with Best Hyperparameters
-python train_final_model.py
-
-3. Load Ensemble Models and Predict on Test Set
-python predict_test_set.py
-
-4. Visualize Predictions
-python visualize_predictions.py
-
-Results
-
-Achieved best validation accuracy across folds using ResNet50 backbone
-
-Provides prediction probabilities for each test image
-
-Identifies low-confidence samples for further review
-
-Folder Structure
-Leukemia-CNN-Transformer/
-├─ data/
-│  ├─ training_data/
-│  ├─ validation_data/
-│  └─ testing_data/
-├─ notebooks/                  # Jupyter notebooks (optional)
-├─ src/                        # Source code
-│  ├─ dataset.py
-│  ├─ model.py
-│  ├─ train.py
-│  ├─ predict.py
-│  └─ utils.py
-├─ requirements.txt
-└─ README.md
-
-Citation
-
-If you use this repository for research or projects, please cite:
-
-Your Name, "Hybrid CNN–Transformer Model for Leukemia Detection", 2025.
-
-License
-
-This project is licensed under the MIT License.
+This approach demonstrates how advanced deep learning techniques can be applied to medical image analysis to support faster and more reliable diagnostic workflows in hematology.
