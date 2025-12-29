@@ -13,3 +13,20 @@ Ensemble predictions from multiple trained folds for more reliable results.
 Confidence scores to identify low-confidence samples, enabling further review.
 
 This approach demonstrates how advanced deep learning techniques can be applied to medical image analysis to support faster and more reliable diagnostic workflows in hematology.
+
+
+## Trained Model Weights
+
+Due to GitHub file size limitations, trained model weights are hosted externally.
+
+📂 Google Drive (public access):
+(https://drive.google.com/drive/folders/1Acqi8atC4tfSLqC3MHYztQbz8BNeG8Xc?usp=drive_link)
+
+### Model Details
+- Architecture: CNN + Transformer ensemble
+- Backbone: ResNet50
+- Training Strategy: 3-Fold Cross Validation
+- Loss Function: Focal Loss
+- Dataset: C-NMC Leukemia Dataset
+
+Download the required `.pth` file(s) and place them in the `models/` directory before inference.
