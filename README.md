@@ -1,4 +1,4 @@
-Leukemia Classification Using Hybrid CNN–Transformer
+# Leukemia Classification Using Hybrid CNN–Transformer
 
 This project focuses on automated detection of leukemia from microscopic blood smear images using a hybrid deep learning architecture. The model combines the strengths of Convolutional Neural Networks (CNNs) for local feature extraction with Transformer encoders to capture global contextual relationships within the image.
 
